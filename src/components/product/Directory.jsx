@@ -30,8 +30,7 @@ function Directory({id ,title , imageUrl ,price , rating}) {
      .fill()
      .map((_, i) => ( 
        <p>⭐</p>
-       ))}
-       {Array(rating).fill().map((_, i) => ( '<p>⭐</p>' ))} 
+       ))} 
      </div>
     </div>
 
