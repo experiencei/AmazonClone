@@ -22,9 +22,11 @@ function Login() {
                  <h5>Password</h5>
                  <input  type="password"/>
 
-                 <button> Sign In</button>
+                 <button className="login__signInButton"> Sign In</button>
              </form>
-             <p> By signin-in you agree to Amazon's Conditions of Use & sale. please see our privacy Notice and our Interest-Based ads Notice.</p>
+             <p> By signin-in you agree to the AMAZON FAKE CLONE Conditions of Use & sale. please see our privacy Notice and our Interest-Based ads Notice.</p>
+
+             <button className="login__registerButton"> Create your Amazon Account</button>
           </div>
         </div>
     )
