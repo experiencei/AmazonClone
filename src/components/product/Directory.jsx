@@ -1,8 +1,23 @@
 import React from 'react'
+import { useStateValue } from '../../stateProvider';
 import "./Product.css";
 
-function Product({ title , imageUrl ,price , rating}) {
-    return (
+function Directory({id ,title , imageUrl ,price , rating}) {
+
+    const [ state , dispatch] = useStateValue();
+     const addToBasket = () => {
+       dispatch({
+         type : "ADD_TO_BASKET",
+         item : {
+           id , 
+           title,
+           imageUrl,
+           price,
+           rating
+         },
+       });
+     }
+    return ( 
     <div className='product'>
      <div className="product__info">
      <p>{title}</p>
@@ -14,14 +29,9 @@ function Product({ title , imageUrl ,price , rating}) {
      {Array(rating)
      .fill()
      .map((_, i) => ( 
-<<<<<<< HEAD
        <p>⭐</p>
        ))}
        {Array(rating).fill().map((_, i) => ( '<p>⭐</p>' ))} 
-=======
-       <p>⭐</p>))
-       } 
->>>>>>> amazon1
      </div>
     </div>
 
@@ -30,9 +40,10 @@ function Product({ title , imageUrl ,price , rating}) {
    alt="electronics"
     />
     
-    <button>Shop Now</button>
+    <button onClick={addToBasket}>Add to Basket</button>
     </div>
+        
     )
 }
 
-export default Product;
+export default Directory
