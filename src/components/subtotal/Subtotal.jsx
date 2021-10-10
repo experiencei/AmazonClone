@@ -8,8 +8,8 @@ function Subtotal() {
                renderText={(value) => (
                    <> 
                    <p>
-                       subtotal ({basket.lenght} items):
-                       <strong> {` ${value}`}</strong>
+                       subtotal (0 items):
+                       <strong> { 0 }</strong>
                    </p>
                    <small className="subtotal__gift">
                        <input type="checkbox"/>
@@ -18,13 +18,17 @@ function Subtotal() {
                    </>
                )}
                decimalScale={2}
-               value={getBasketTotal(basket)}
+               value={0}
                displayType={"text"}
                thousandSeparator={true}
-               prefix={""}
+               prefix={"€"}
            />
+           <button> Proceed to Checkout</button>
         </div>
     )
 }
 
 export default Subtotal
+// {basket.lenght}
+// ` ${value}`
+// getBasketTotal(basket)
