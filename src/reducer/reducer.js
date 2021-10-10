@@ -4,12 +4,12 @@ export const initialState = {
 
 
 
-const reducer = (state = initialState, { type, payload }) => {
+const reducer = (state = initialState, { type, item }) => {
     switch (type) {
 
     case 'ADD_TO_BASKET':
         return { ...state, 
-            basket : [...state.basket , payload]
+            basket : [...state.basket , item]
          }
     default:
         return state
