@@ -1,4 +1,5 @@
 import React from 'react'
+import { useStateValue } from '../../stateProvider';
 import "./CheckoutProduct.css";
 
 function CheckoutProduct({ id , imageUrl , title , price , rating}) {
@@ -8,7 +9,7 @@ function CheckoutProduct({ id , imageUrl , title , price , rating}) {
     dispatch({
       type : "REMOVE__FROM__BASKET",
       item : {
-        id 
+        id
       },
     });
   }
@@ -32,7 +33,7 @@ function CheckoutProduct({ id , imageUrl , title , price , rating}) {
                 <p>⭐</p>
                 ))} 
                 </div>
-                <button   onClick={removeFromBasket}>Remove from Basket</button>
+                <button  onClick={removeFromBasket}>Remove from Basket</button>
             </div>
         </div>
     )
