@@ -1,23 +1,26 @@
 import React from 'react'
-import "./Directory.css";
+import "./Product.css";
 
-function DIrectory() {
+function Product({ title , imageUrl ,price , rating}) {
     return (
     <div className='product'>
      <div className="product__info">
-     <p>Electronics</p>
+     <p>{title}</p>
      <p className="product__price">
         <small>$</small>
-        <strong>119.0</strong>    
+        <strong>{price}</strong>    
       </p>
      <div className="product__rating">
-           <p>⭐</p>
-           <p>⭐</p>
+     {Array(rating)
+     .fill()
+     .map((_, i) => ( 
+       <p>⭐</p>
+       ))}
      </div>
     </div>
 
     <img
-   src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/May/Dashboard/Fuji_Dash_Electronics_1x._SY304_CB432774322_.jpg"
+   src={imageUrl}
    alt="electronics"
     />
     
@@ -26,4 +29,4 @@ function DIrectory() {
     )
 }
 
-export default DIrectory
+export default Product;
