@@ -6,6 +6,7 @@ import "./Payment.css";
 import { CardElement , useStripe , useElements } from '@stripe/react-stripe-js';
 import CurrencyFormat from 'react-currency-format';
 import { getBasketTotal } from '../../reducer/reducer';
+import axios from 'axios';
 function Payment() {
     const [ {basket , user} , dispatch] = useStateValue();
 
@@ -37,6 +38,13 @@ function Payment() {
             payment_method : {
                 card: elements.getElement(CardElement)
             }
+        }).then(({ paymentIntent })  => {
+            // payment = paymentConfimation
+            setSucceeded(true);
+            setError(null);
+            setProcessing(false)
+
+            history.replace("/orders")
         })
     }
 
