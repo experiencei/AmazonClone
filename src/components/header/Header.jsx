@@ -34,7 +34,6 @@ function Header() {
               </div>
                
               <div className="header__option">
-               console.log(user)
                 <span className="option__one">Your</span>
                 <span className="option__two">Prime</span>
               </div>
