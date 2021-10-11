@@ -6,8 +6,10 @@ import "./Payment.css";
 import { CardElement , useStripe , useElements } from '@stripe/react-stripe-js';
 import CurrencyFormat from 'react-currency-format';
 import { getBasketTotal } from '../../reducer/reducer';
-import axios from 'axios';
+import axios from "../axios/axios"
+import { useHistory } from 'react-router';
 function Payment() {
+    const history = useHistory();
     const [ {basket , user} , dispatch] = useStateValue();
 
     const stripe = useStripe();
