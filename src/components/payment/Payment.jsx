@@ -34,7 +34,12 @@ function Payment() {
                     </div>
                 </div>
                 <div className="payment__section">
-
+                   <div className="payment__title">
+                        <h3>Payment Method</h3>
+                    </div>
+                    <div className="payment__details">
+                        <h3>Review items and delivery</h3>
+                    </div>
                 </div>
             </div>
         </div>
