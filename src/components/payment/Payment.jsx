@@ -7,8 +7,21 @@ import { CardElement , useStripe , useElements } from '@stripe/react-stripe-js';
 
 function Payment() {
     const [ {basket , user} , dispatch] = useStateValue();
+    const [error , setError] = useState(null);
+    const [disabled , setDisabled] = useState(true);
+
     const stripe = useStripe();
     const elements = useElements();
+    
+    const handleSubmiit  = event => {
+        setError(event.empty);
+        setDisabled( event.error ? event.error.message : '');
+    }
+
+    const handleChange  = event => {
+        setError(event.empty);
+        setDisabled( event.error ? event.error.message : '');
+    }
     return (
         <div className="payment">
             <div className="payment__container">
@@ -47,8 +60,8 @@ function Payment() {
                         <h3>Payment Method</h3>
                     </div>
                     <div className="payment__details">
-                        <form>
-                            <CardElement/>
+                        <form onSubmit={handleSubmiit}>
+                            <CardElement  onChange={handleChange}/>
                         </form>
                     </div>
                 </div>
