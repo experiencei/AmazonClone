@@ -1,5 +1,6 @@
 export const initialState = {
-    basket : []
+    basket : [],
+    user : null
 }
 
 //selector
@@ -29,6 +30,7 @@ const reducer = (state = initialState, { type, item }) => {
            ...state,
            basket : newBasket
        }
+       
     default:
         return state
     }
