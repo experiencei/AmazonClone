@@ -1,4 +1,6 @@
 import React from 'react'
+import { useStateValue } from '../../stateProvider';
+import CheckoutProduct from '../CheckoutProduct/CheckoutProduct';
 import "./Payment.css";
 
 function Payment() {
@@ -18,7 +20,15 @@ function Payment() {
                 </div>
 
                 <div className="payment__section">
-                 
+                    <div className="payment__title">
+                        <h3>Review items and delivery</h3>
+                    </div>
+                    <div className="payment__items">
+                        {basket.map( ({ id , otherprops})=> (<CheckoutProduct
+                            key={id} 
+                            {...otherprops}
+                        />))}
+                    </div>
                 </div>
                 <div className="payment__section">
 

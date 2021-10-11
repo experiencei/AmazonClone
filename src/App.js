@@ -8,6 +8,7 @@ import Checkout from './components/checkout/Checkout';
 import Login from './components/login/Login';
 import { auth } from './firebase/firebase';
 import { useStateValue } from './stateProvider';
+import Payment from './components/payment/Payment';
 function App() {
   const [ {} , dispatch] = useStateValue();
 
