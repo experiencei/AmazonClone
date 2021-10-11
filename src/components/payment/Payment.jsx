@@ -4,6 +4,7 @@ import { useStateValue } from '../../stateProvider';
 import CheckoutProduct from '../CheckoutProduct/CheckoutProduct';
 import "./Payment.css";
 import { CardElement , useStripe , useElements } from '@stripe/react-stripe-js';
+import CurrencyFormat from 'react-currency-format';
 
 function Payment() {
     const [ {basket , user} , dispatch] = useStateValue();
@@ -12,7 +13,7 @@ function Payment() {
 
     const stripe = useStripe();
     const elements = useElements();
-    
+
     const handleSubmiit  = event => {
         setError(event.empty);
         setDisabled( event.error ? event.error.message : '');
@@ -62,6 +63,18 @@ function Payment() {
                     <div className="payment__details">
                         <form onSubmit={handleSubmiit}>
                             <CardElement  onChange={handleChange}/>
+                            <div className="payment__priceContainer">
+                               <CurrencyFormat
+                            renderText={(value) => (
+                              <h3>Order Total: {value}</h3>
+                              )}
+                        decimalScale={2}
+                        value={getBasketTotal(basket)}
+                        displayType={"text"}
+                        thousandSeparator={true}
+                        prefix={"€"}
+                               />
+                            </div>
                         </form>
                     </div>
                 </div>
