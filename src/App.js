@@ -9,19 +9,20 @@ import Login from './components/login/Login';
 import { auth } from './firebase/firebase';
 import { useStateValue } from './stateProvider';
 function App() {
-  const [ {  } , dispatch] = useStateValue();
+  const [ {} , dispatch] = useStateValue();
 
   useEffect( () => {
     auth.onAuthStateChanged( authUser => {
+     console.log(" this user is", authUser);
       if (authUser) {
         dispatch({
           type : "SET_USER",
-          user : authUser
+          item : authUser
         })
       } else {
         dispatch({
           type : "SET_USER",
-          user : null
+          item : null
         })
       }
     })
