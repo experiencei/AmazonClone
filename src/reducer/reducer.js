@@ -33,7 +33,7 @@ const reducer = (state = initialState, { type , item }) => {
        case "SET_USER" :
          return{
              ...state,
-             user : user
+             user : item
          }
     default:
         return state

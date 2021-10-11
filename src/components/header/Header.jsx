@@ -25,7 +25,7 @@ function Header() {
               <Link to="/login">
               <div className="header__option">
                 <span className="option__one"> Hello Guest</span>
-                <span className="option__two" >{user ? "Sign In" : "Sign Out"}</span>
+                <span className="option__two" >{user ? "Sign Out"  :  "Sign In"}</span>
               </div>
               </Link>
               <div className="header__option">
