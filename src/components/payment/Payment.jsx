@@ -24,9 +24,12 @@ function Payment() {
                         <h3>Review items and delivery</h3>
                     </div>
                     <div className="payment__items">
-                        {basket.map( ({ id , otherprops})=> (<CheckoutProduct
-                            key={id} 
-                            {...otherprops}
+                        {basket.map( item => (<CheckoutProduct
+                            key={item.id} 
+                            id={item.id}
+                            imageUrl={item.imageUrl}
+                            price={item.price}
+                            rating={item.rating}
                         />))}
                     </div>
                 </div>
