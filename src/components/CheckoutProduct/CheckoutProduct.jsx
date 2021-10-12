@@ -19,6 +19,7 @@ function CheckoutProduct({ id , imageUrl , title , price , rating}) {
             <img 
                className="checkout__img"
                src={imageUrl}
+               alt="checkout"
             />
             <div className="checkoutProduct__info">
                 <p className="checkoutProduct__title">{title}</p>
