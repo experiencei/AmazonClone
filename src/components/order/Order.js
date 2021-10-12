@@ -4,7 +4,7 @@ import moment from "moment"
 import CheckoutProduct from '../CheckoutProduct/CheckoutProduct';
 import CurrencyFormat from 'react-currency-format';
 
-function Order({ Order}) {
+function Order({ order}) {
     return (
         <div className='order'>
         <h2>Order</h2>
@@ -16,7 +16,7 @@ function Order({ Order}) {
             <CheckoutProduct
                 id={item.id}
                 title={item.title}
-                image={item.image}
+                imageUrl={item.imageUrl}
                 price={item.price}
                 rating={item.rating}
                 hideButton

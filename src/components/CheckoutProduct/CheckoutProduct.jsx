@@ -2,7 +2,7 @@ import React from 'react'
 import { useStateValue } from '../../stateProvider';
 import "./CheckoutProduct.css";
 
-function CheckoutProduct({ id , imageUrl , title , price , rating}) {
+function CheckoutProduct({ id , imageUrl , title , price , rating , hideButton}) {
     const [ { basket  } , dispatch] = useStateValue();
 
    const removeFromBasket = () => {
@@ -34,7 +34,9 @@ function CheckoutProduct({ id , imageUrl , title , price , rating}) {
                 <p>⭐</p>
                 ))} 
                 </div>
-                <button  onClick={removeFromBasket}>Remove from Basket</button>
+                {!hideButton && (
+                    <button onClick={removeFromBasket}>Remove from Basket</button>
+                )}
             </div>
         </div>
     )
